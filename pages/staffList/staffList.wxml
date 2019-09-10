@@ -1,0 +1,29 @@
+<van-tabs bind:change="onChange" border="{{false}}">
+	<van-tab title="我的员工">
+		<view class="pd_head">共有<text>{{list.length}}</text>名员工</view>
+		<view class="staff_list">
+			<view class="staff_item" wx:for="{{list}}" wx:key="{{index}}">
+				<image class="staff_img" src="{{item.avatar}}"></image>
+				<view class="staff_content">
+					<view class="staff_name">{{item.username}}</view>
+					<view class="staff_tel">{{item.tel ? item.tel : '暂无手机号码'}}</view>
+				</view>
+				<view class="staff_btn" bindtap="del" data-id="{{item.id}}" data-index="{{index}}">删除</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="待审核员工">
+		<view class="pd_head">有<text>{{list.length}}</text>名员工请求加入公司</view>
+		<view class="staff_list">
+			<view class="staff_item" wx:for="{{list}}" wx:key="{{index}}">
+				<image class="staff_img" src="{{item.avatar}}"></image>
+				<view class="staff_content">
+					<view class="staff_name">{{item.username}}</view>
+					<view class="staff_tel">{{item.tel ? item.tel : '暂无手机号码'}}</view>
+				</view>
+				<view class="staff_btn black" bindtap="refuse" data-apply-id="{{item.apply_id}}" data-index="{{index}}" data-uid="{{item.uid}}">拒绝</view>
+				<view class="staff_btn" bindtap="adopt" data-apply-id="{{item.apply_id}}" data-index="{{index}}" data-uid="{{item.uid}}">通过</view>
+			</view>
+		</view>
+	</van-tab>
+</van-tabs>

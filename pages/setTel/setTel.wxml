@@ -1,0 +1,48 @@
+<view wx:if="{{!mobile}}">
+	<view class="secList">
+		<view class="sec">
+			<view class="title">手机号</view>
+			<input placeholder='请填写手机号' bindinput="input" data-name="newTel"></input>
+		</view>
+		<view class="sec">
+			<view class="title">验证码</view>
+			<input placeholder='请填写验证码' bindinput="input" data-name="newCode"></input>
+			<view class="btn" bindtap="getCode" data-key="newTel">{{txt}}</view>
+		</view>
+		<view class="submit" bindtap="submit">确认绑定</view>
+	</view>
+</view>
+
+<view wx:else>
+	<swiper current="{{current}}">
+		<swiper-item catchtouchmove>
+			<view class="secList">
+				<view class="sec">
+					<view class="title width">当前绑定</view>
+					<input value="{{mobile}}" disabled></input>
+				</view>
+				<view class="sec">
+					<view class="title width">验证码</view>
+					<input placeholder='请填写验证码' bindinput="input" data-name="oldCode"></input>
+					<view class="btn" bindtap="getCode" data-key="mobile">{{txt2}}</view>
+				</view>
+				<view class="submit" bindtap="next">下一步</view>
+			</view>
+		</swiper-item>
+
+		<swiper-item catchtouchmove>
+			<view class="secList">
+				<view class="sec">
+					<view class="title width">新的号码</view>
+					<input placeholder='请填写新的手机号码' bindinput="input" data-name="newTel"></input>
+				</view>
+				<view class="sec">
+					<view class="title width">验证码</view>
+					<input placeholder='请填写验证码' bindinput="input" data-name="newCode"></input>
+					<view class="btn" bindtap="getCode" data-key="newTel">{{txt}}</view>
+				</view>
+				<view class="submit" bindtap="verify">确认更换</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>

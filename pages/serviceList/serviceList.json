@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "米瑞服务",
+	"usingComponents": {
+		"border": "/template/border/border",
+		"service": "/template/serviceItem/serviceItem"
+	}
+}

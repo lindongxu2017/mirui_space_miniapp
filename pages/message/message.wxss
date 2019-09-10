@@ -1,0 +1,8 @@
+/* pages/message/message.wxss */
+page {
+    background-color: #F4F4F4;
+}
+
+.tab-content {
+    padding: 0 30rpx 30rpx;
+}

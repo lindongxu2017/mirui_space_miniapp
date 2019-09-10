@@ -1,0 +1,20 @@
+<view class="coupon_list">
+    <view class='coupon_item' wx:for="{{list}}" wx:key="{{index}}">
+        <image src="/icon/coupon_bg.png" mode='widthFix'></image>
+        <view class="coupon_hint" wx:if="{{item.day > 0}}">仅剩{{item.day}}天</view>
+		<view class="coupon_hint" wx:if="{{item.day == 0}}">即将过期</view>
+        <view class='coupon_content'>
+            <view class='coupon_price'>
+                <view class="symbol">￥</view>
+                <view>{{item.price}}</view>
+			</view>
+            <view class="coupon_title_time">
+                <view class="coupon_title">{{item.title}}</view>
+                <view class="coupon_time">有效期至：{{item.end_time}}</view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{noData}}">
+        <noData></noData>
+    </block>
+</view>

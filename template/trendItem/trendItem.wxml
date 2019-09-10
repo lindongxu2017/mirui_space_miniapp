@@ -1,0 +1,62 @@
+<!--template/trendItem/trendItem.wxml-->
+<view class='trend'>
+    <view class='userinfo flex align-c justify-b'>
+        <image class='avatar' src='{{info.avatar}}' mode='aspectFill'></image>
+        <view class='info'>
+            <view class='name flex'>
+				<view>{{info.username}}</view>
+				<text wx:if="{{info.room_admin == 2}}">空间主管</text>
+			</view>
+        </view>
+        <view class='del' bindtap='del' wx:if="{{showDel}}">删除</view>
+    </view>
+    <view class='content'>{{info.content}}</view>
+    <view class='imgs'>
+        <block wx:for="{{info.img_arr}}" wx:key="{{index}}">
+            <image class='img-item' src='{{item}}' data-src='{{item}}' bindtap='preView' mode='aspectFill'></image>
+        </block>
+    </view>
+    <view class='time-other flex align-c justify-b'>
+        <view class='time'>{{info.createTime}}</view>
+        <view class='operation'>
+            <view class='dolike' bindtap='dolike'>
+                <image class='icon' wx:if="{{info.is_laud == 0}}" mode='widthFix' src='/icon/like.png'></image>
+                <image class='icon' wx:if="{{info.is_laud == 1}}" mode='widthFix' src='/icon/like-active.png'></image>
+                <text class='text'>{{info.praiseCount}}</text>
+            </view>
+            <view class='num' bindtap='openInput'>
+                <image class='icon' src='/icon/reply.png' mode='widthFix'></image>
+                <text class='text'>{{info.commentCount}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='reply-list' wx:if="{{info.comments.length > 0}}">
+        <block wx:for="{{info.comments}}" wx:key="{{index}}">
+            <view class='reply-item'>
+                <view class='content name' data-item="{{item}}" catchtap='setUid'>{{item.username}}</view>
+                <view class='content text' wx:if="{{item.to_username}}">回复</view>
+                <view class='content name' wx:if="{{item.to_username}}" data-item="{{item}}" catchtap='setUid'>{{item.to_username}}</view>
+                <view class='content'>：</view>
+                <view class='content'>{{item.content}}</view>
+            </view>
+        </block>
+    </view>
+    
+    <view class='reply-wrapper flex align-s' wx:if="{{showReply}}">
+        <view class='input-wrapper'>
+            <input class="input" placeholder='回复' type="text"
+                adjust-position
+                focus="{{true}}"
+                auto-focus="{{true}}"
+                confirm-type="send"
+                bindblur="onblur"
+                bindinput="oninput"
+                cursor-spacing="7"
+                bindconfirm="sendMessag"
+            ></input>
+        </view>
+        <view class='send' bindtap='sendMessag'>发送</view>
+    </view>
+
+</view>

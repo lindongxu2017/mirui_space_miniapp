@@ -1,0 +1,189 @@
+/* pages/payDetail/payDetail.wxss */
+@import "/app.wxss";
+page {
+    background-color: #F4F4F4;
+}
+.header-info {
+    font-size: 0;
+    position: relative;
+}
+.placeholder-text {
+    padding: 36rpx 30rpx 116rpx;
+    font-size: 32rpx;
+    opacity: 0;
+    box-sizing: border-box;
+}
+.header-info .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.header-info .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 36rpx 30rpx;
+    box-sizing: border-box;
+}
+.header-info .content .name {
+    font-size: 32rpx;
+    color: #FFFFFF;
+    text-align: center;
+}
+.orderNumber {
+    position: absolute;
+    left: 30rpx;
+    right: 30rpx;
+    bottom: 0;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color: #9FA4B1;
+    background-color: #F6F6F6;
+    border-bottom: 2rpx dashed #9FA4B1;
+    box-sizing: border-box;
+    border-top-left-radius: 15rpx;
+    border-top-right-radius: 15rpx;
+    text-align: center;
+}
+.bill-wrapper {
+    padding: 0 30rpx 60rpx;
+}
+.total {
+    background-color: #fff;
+    padding: 38rpx 30rpx 50rpx;
+    border-bottom: 2rpx dashed #ccc;
+    position: relative;
+}
+.total .title {
+    font-size: 28rpx;
+    color: #9FA4B1;
+    margin-bottom: 30rpx;
+    line-height: 1;
+    text-align: center;
+}
+.total .text {
+    font-size: 72rpx;
+    color: #122236;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.circle {
+    position: relative;
+}
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 26rpx;
+    height: 26rpx;
+    border-radius: 50%;
+    bottom: -13rpx;
+    left: -13rpx;
+    background-color: #F4F4F4;
+    z-index: 2;
+}
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 26rpx;
+    height: 26rpx;
+    border-radius: 50%;
+    bottom: -13rpx;
+    right: -13rpx;
+    background-color: #F4F4F4;
+    z-index: 2;
+}
+.spaceFeeList .spaceFee {
+    background-color: #fff;
+    padding: 30rpx 30rpx 0;
+    border-bottom: 2rpx dashed #ccc;
+	position: relative;
+}
+.spaceFeeList .spaceFee::before {
+    content: "";
+    position: absolute;
+    width: 26rpx;
+    height: 26rpx;
+    border-radius: 50%;
+    bottom: -13rpx;
+    left: -13rpx;
+    background-color: #F4F4F4;
+    z-index: 2;
+}
+.spaceFeeList .spaceFee::after {
+    content: "";
+    position: absolute;
+    width: 26rpx;
+    height: 26rpx;
+    border-radius: 50%;
+    bottom: -13rpx;
+    right: -13rpx;
+    background-color: #F4F4F4;
+    z-index: 2;
+}
+.spaceFeeList .spaceFee:last-child {
+    border-bottom: 0;
+	border-bottom-left-radius: 15rpx;
+    border-bottom-right-radius: 15rpx;
+}
+.spaceFeeList .spaceFee:last-child::before,
+.spaceFeeList .spaceFee:last-child::after{
+	display: none;
+}
+
+.cell-title {
+    margin-bottom: 33rpx;
+}
+.cell-title .icon {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 17rpx;
+    vertical-align: middle;
+}
+.cell-title .text {
+    font-size: 28rpx;
+    color: #122236;
+    vertical-align: middle;
+	flex:1;
+	width:0;
+}
+.cell-title .status{
+	color:#BD263E;
+	font-size:26rpx;
+}
+.cell-title .status.done{
+	color:#9FA4B1;
+}
+
+.fee-wlist {
+    padding-left: 47rpx;
+}
+.fee-wlist .cell {
+    padding: 34rpx 0;
+    font-size: 28rpx;
+    color: #9FA4B1;
+}
+.create-time {
+    font-size: 28rpx;
+    color: #122236;
+    padding: 37rpx 0;
+}
+.create-time text {
+    color: #BD253E;
+}
+.btn-wrapper {
+    padding: 96rpx 0 140rpx;
+}
+.btn-wrapper .text {
+    line-height: 88rpx;
+    font-size: 35rpx;
+    color: #FFFFFF;
+    background-color: #1685F7;
+    border-radius: 4rpx;
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+<!--pages/placeDetail/placeDetail.wxml-->
+<import src="/wxParse/wxParse.wxml"/>
+
+<image class='banner-img' src='{{info.img_url}}' mode='widthFix'></image>
+<view class='info'>
+    <view class='item-info flex flex-dir justify-a'>
+        <view class='flex align-c justify-b'>
+            <view class='name'>{{info.name}}{{info.number}}</view>
+            <view class='capacity'>可容纳{{info.people_num}}人</view>
+        </view>
+        <view class='label-list'>
+            <block wx:for="{{info.label}}" wx:key="{{index}}">
+                <view>{{item}}</view>
+            </block>
+        </view>
+        <view class='place flex align-s'>
+            <image src='/icon/location.png' mode='aspectFill'></image>
+            <view class='location'>{{info.address}}</view>
+        </view>
+    </view>
+</view>
+
+<view class='cell'>图文介绍</view>
+
+<view class='content'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+<view class='btn'>
+    <navigator hover-class='none' url='/pages/placeAppointment/placeAppointment?id={{room_id}}&type={{type}}'>
+        <view>场地预约</view>
+    </navigator>
+</view>

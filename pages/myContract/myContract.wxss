@@ -1,0 +1,4 @@
+/* pages/myContract/myContract.wxss */
+.list-wrapper {
+    padding-bottom: 30rpx;
+}

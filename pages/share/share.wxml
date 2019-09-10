@@ -1,0 +1,4 @@
+<view class="relative">
+	<image src="{{url}}" mode="widthFix"></image>
+	<button open-type='share'></button>
+</view>

@@ -1,0 +1,23 @@
+<view class="riceBeans_bg">
+	<image src="/icon/riceBeans_bg.png" mode='widthFix'></image>
+	<view class="total">
+		<view class="total_title">我的米豆</view>
+		<view class="total_number">{{mibean}}</view>
+	</view>
+</view>
+<view class="riceBeans_list">
+	<view class="riceBeans_item" wx:for="{{list}}" wx:key="{{index}}">
+		<view class="flex align-c justify-b riceBeans_margin_bottom">
+			<view class="riceBeans_title">{{item.title}}</view>
+			<view class="riceBeans_nub {{item.type == 2 ? 'add' : ''}}">{{item.type == 1 ? '-' : '+'}}{{item.mibean_num}}米豆</view>
+		</view>
+		<view class="flex align-c justify-b">
+			<view class="riceBeans_type">类型：{{item.type_name}}</view>
+			<view class="riceBeans_time">{{item.create_time}}</view>
+		</view>
+	</view>
+</view>
+
+<block wx:if="{{noData}}">
+    <noData></noData>
+</block>

@@ -1,0 +1,84 @@
+page{
+	background-color:#F8F8F8;
+	/* padding-bottom:125rpx; */
+}
+.myBusiness_list{
+	margin-top:23rpx;
+	background:white;
+}
+.myBusiness_item{
+	position:relative;
+	height:100rpx;
+	border-bottom:1px solid transparent;
+}
+.myBusiness_item:after{
+	position:absolute;
+	content:"";
+	left:30rpx;
+	right:30rpx;
+	bottom:-1px;
+	width:calc(100% - 60rpx);
+	height:1px;
+	background-color:#eee;
+}
+.myBusiness_list .myBusiness_item:last-child{
+	border-bottom:none;
+}
+.myBusiness_list .myBusiness_item:last-child:after{
+	display:none;
+}
+.content{
+	display:flex;
+	align-items:center;
+}
+.content .txt{
+	height:100rpx;
+	line-height:100rpx;
+	font-size:30rpx;
+	color:#122236;
+	padding-left:30rpx;
+}
+.content .icon{
+	margin-left:15rpx;
+	width:57rpx;
+	height:36rpx;
+	line-height:36rpx;
+	border-radius:18rpx;
+	font-size:25rpx;
+	color:#FEFEFE;
+	text-align:center;
+	background-color:#D4D4D4;
+}
+.btn{
+	width:75px;
+	height:100rpx;
+	line-height:100rpx;
+	font-size:30rpx;
+	color:#fff;
+	text-align:center;
+}
+.btn.edit{
+	background-color:#C7C7C7;
+}
+.btn.del{
+	background-color:#BD253E;
+}
+/* .btn_box{
+	bottom:0;
+	left:0;
+	width:calc(100% - 60rpx);
+	position:fixed;
+	padding:22rpx 30rpx;
+	height:80rpx;
+	border-top:1rpx solid #DCDCDC;
+	background-color:white;
+}
+.btn_box .btn_txt{
+	height:80rpx;
+	line-height:80rpx;
+	text-align:center;
+	color:white;
+	background-color:#1685F7;
+	font-size:30rpx;
+	border-radius:4rpx;
+} */

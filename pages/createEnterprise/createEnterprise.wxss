@@ -1,0 +1,35 @@
+page{
+	background-color:#F8F8F8;
+}
+.head{
+	margin-top:23rpx;
+	padding:0 30rpx;
+	font-size:30rpx;
+	display:flex;
+	justify-content:space-between;
+	height:100rpx;
+	line-height:100rpx;
+	background-color:white;
+	color:#122236;
+	align-items:center;
+}
+.head .title{
+	margin-right:30rpx;
+}
+.head input{
+	flex:1;
+	width:0;
+	height:70rpx;
+	text-align:right;
+}
+.btn{
+	margin:120rpx 30rpx 0;
+	height:80rpx;
+	line-height:80rpx;
+	text-align:center;
+	font-size:30rpx;
+	color:white;
+	font-weight:600;
+	background:rgba(22,133,247,1);
+	border-radius:4rpx;
+}

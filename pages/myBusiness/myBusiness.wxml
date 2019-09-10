@@ -1,0 +1,15 @@
+<view class="myBusiness_list">
+	<view class="myBusiness_item" wx:for="{{list}}" wx:key="{{index}}">
+		<van-swipe-cell right-width="{{150}}" async-close="true" bind:close="onClose" data-id="{{item.company_id}}" data-index="{{index}}" data-name="{{item.company_name}}">
+			<view class="content" slot="content">
+				<view class="txt">{{item.company_name}}</view>
+				<view class="icon">{{item.people}}</view>
+			</view>
+			<view slot="left" class="btn edit">编辑</view>
+			<view slot="right" class="btn del">删除</view>
+		</van-swipe-cell>
+	</view>
+</view>
+<!-- <view class="btn_box">
+	<navigator class="btn_txt" hover-class='none' url="/pages/createEnterprise/createEnterprise">创建企业</navigator>
+</view> -->

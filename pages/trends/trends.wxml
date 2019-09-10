@@ -1,0 +1,18 @@
+<view class='list-wrapper'>
+    <block wx:for="{{trendsList}}" wx:key="{{index}}">
+        <trend bindrelease="release" item-info="{{item}}"></trend>
+        <block wx:if="{{index != trendsList.length - 1}}">
+            <border no-pad="{{true}}"></border>
+        </block>
+    </block>
+</view>
+
+<block wx:if="{{noData}}">
+	<noData></noData>
+</block>
+
+<block wx:if="{{showBtn}}">
+    <navigator hover-class='none' url='/pages/trendsRelease/trendsRelease'>
+        <view class='release'>发布动态</view>
+    </navigator>
+</block>

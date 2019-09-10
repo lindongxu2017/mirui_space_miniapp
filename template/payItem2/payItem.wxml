@@ -1,0 +1,23 @@
+<view class='info-wrapper'>
+    <view class='order-number flex align-c justify-b'>
+        <view class='text'>预约时间：{{item.start_time}}</view>
+        <view class='text status'>{{item.duration}}小时</view>
+    </view>
+    <view class='pay-info flex align-s'>
+        <view class='avatar'>
+			<image src='{{item.img_url}}' mode='aspectFill'></image>
+			<view class="avatar_btn {{item.type == '会议室' ? '' : 'bg'}}">{{item.type}}</view>
+		</view>
+        <view class='content flex flex-dir justify-a'>
+            <view class='name'>{{item.name}}{{item.number}}</view>
+            <view class='total'>合计：<text class='text'>{{item.price}}{{item.pay_type == 1 ? '米豆' : '元'}}</text> </view>
+        </view>
+    </view>
+    <view class='operation'>
+        <view class='btn' wx:if="{{item.is_cancel && type != 4}}" bindtap="del" data-id="{{item.subscribe_room_id}}">取消预约</view>
+		<view class='btn active' wx:if="{{item.is_pay}}" bindtap="pay" data-id="{{item.subscribe_room_id}}">立即支付</view>
+    </view>
+</view>
+<view class='border-img'>
+    <image class='img' src='/icon/border-img.png' mode='aspectFill'></image>
+</view>

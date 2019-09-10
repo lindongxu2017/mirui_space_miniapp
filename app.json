@@ -1,0 +1,95 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/wxAuth/wxAuth",
+        "pages/placeAppointment/placeAppointment",
+        "pages/center/center",
+        "pages/setTel/setTel",
+        "pages/myBusiness/myBusiness",
+        "pages/myBusiness2/myBusiness2",
+        "pages/businessSearch/businessSearch",
+        "pages/createEnterprise/createEnterprise",
+        "pages/myAppointment/myAppointment",
+        "pages/riceBeans/riceBeans",
+        "pages/coupon/coupon",
+        "pages/staffList/staffList",
+        "pages/trends/trends",
+        "pages/discover/discover",
+        "pages/message/message",
+        "pages/place/place",
+        "pages/placeDetail/placeDetail",
+        "pages/repair/repair",
+        "pages/repairApply/repairApply",
+        "pages/suggestion/suggestion",
+        "pages/serviceList/serviceList",
+        "pages/serviceDetail/serviceDetail",
+        "pages/trendsRelease/trendsRelease",
+        "pages/myRelease/myRelease",
+        "pages/myContract/myContract",
+        "pages/pay/pay",
+        "pages/myPay/myPay",
+        "pages/payDetail/payDetail",
+        "pages/payDetail2/payDetail2",
+        "pages/guide/guide",
+        "pages/activityManage/activityManage",
+        "pages/activityDetail/activityDetail",
+        "pages/share/share",
+        "pages/myReserve/myReserve",
+        "pages/appointmentVisit2/appointmentVisit2",
+        "pages/appointmentVisit/appointmentVisit",
+        "pages/complaintList/complaintList",
+        "pages/enterpriseDisplay/enterpriseDisplay",
+        "pages/roomDisplay/roomDisplay",
+        "pages/album/album"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "米瑞空间",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#ACABB1",
+        "selectedColor": "#1685F7",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./icon/home.png",
+                "selectedIconPath": "./icon/home-select.png"
+            },
+            {
+                "pagePath": "pages/discover/discover",
+                "text": "发现",
+                "iconPath": "./icon/discover.png",
+                "selectedIconPath": "./icon/discover-select.png"
+            },
+            {
+                "pagePath": "pages/trends/trends",
+                "text": "动态",
+                "iconPath": "./icon/trends.png",
+                "selectedIconPath": "./icon/trends-select.png"
+            },
+            {
+                "pagePath": "pages/message/message",
+                "text": "消息",
+                "iconPath": "./icon/message.png",
+                "selectedIconPath": "./icon/message-select.png"
+            },
+            {
+                "pagePath": "pages/center/center",
+                "text": "中心",
+                "iconPath": "./icon/center.png",
+                "selectedIconPath": "./icon/center-select.png"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序获取附近场地信息"
+        }
+    },
+    "sitemapLocation": "sitemap.json"
+}

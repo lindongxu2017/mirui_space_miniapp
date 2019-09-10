@@ -1,0 +1,5 @@
+<swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" style="height:{{swiperImageHeight[swiperCurrent] + 'rpx'}};" bindchange="swiperChange">
+	<swiper-item wx:for="{{list}}" wx:key="{{index}}">
+		<image mode='aspectFill' src="{{str ? item[str] : item}}" bindtap="{{nav ? 'navigator' : 'preview'}}" data-id="{{navSplicing ? item[navStr] : ''}}" data-index="{{index}}"></image>
+	</swiper-item>
+</swiper>

@@ -1,0 +1,12 @@
+<view class="search_box">
+	<view class="search">
+		<image src="/icon/search.png"></image>
+		<input placeholder='请输入关键字' bindinput="input"></input>
+	</view>
+</view>
+<view class="business_list">
+	<view class="business_item" wx:for="{{list}}" wx:key="{{index}}">
+		<view class="business_title">{{item.company_name}}</view>
+		<view class="business_btn" bindtap="join" data-id="{{item.company_id}}">申请加入 ></view>
+	</view>
+</view>

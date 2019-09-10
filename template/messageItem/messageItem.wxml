@@ -1,0 +1,11 @@
+<view class='message-item'>
+    <view class='header-content flex align-c'>
+        <view class='title-wrapper flex align-c'>
+            <text class='dot' style='background-color: {{ info.status == 1 ? "#FFBA6F" : info.status == 2 ? "#FF6F6F" : info.status == 3 ? "#806FFF" : "#76E781" }};'></text>
+            <text class='title'>{{info.title}}</text>
+        </view>
+        <view class='time'>{{info.create_time}}</view>
+    </view>
+    <border no-pad="{{true}}"></border>
+    <view class='body-content'>{{info.content}}</view>
+</view>

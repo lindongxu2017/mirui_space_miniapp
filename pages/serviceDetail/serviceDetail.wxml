@@ -1,0 +1,18 @@
+<import src="/wxParse/wxParse.wxml"/>
+
+<image class='banner-img' src='{{info.picture}}' mode='widthFix'></image>
+<view class='info'>
+    <view class='item-info'>
+        <view class='name'>{{info.name}}</view>
+        <view class='place flex align-c'>
+            <image src='/icon/location.png' mode='aspectFill'></image>
+            <view class='location'>{{info.address}}</view>
+        </view>
+    </view>
+</view>
+
+<view class='cell'>详情介绍</view>
+
+<view class='content'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

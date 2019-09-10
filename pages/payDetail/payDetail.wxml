@@ -1,0 +1,78 @@
+<view class='header-info'>
+    <image class='bg-img' mode='aspectFill' src='/icon/riceBeans_bg.png'></image>
+    <view class='placeholder-text'>{{info.address}}</view>
+    <view class='content'>
+        <view class='name'>{{info.address}}</view>
+        <view class='orderNumber'>订单编号：{{info.out_trade_no}}</view>
+    </view>
+</view>
+<view class='bill-wrapper'>
+    <view class='total circle'>
+        <view class='title'>本月账单（元）</view>
+        <view class='text'>{{info.total}}</view>
+    </view>
+
+	<view class="spaceFeeList">
+		<view class='spaceFee'>
+			<view class='cell-title flex align-c'>
+				<text class='text'>空间使用费</text>
+				<text class="status {{info.is_pay_all_fee ? 'done' : ''}}">{{info.is_pay_all_fee ? '已缴费' : '待缴费'}}</text>
+			</view>
+			<view class='fee-wlist'>
+				<border no-pad="{{true}}"></border>
+				<view class='cell flex align-c justify-b'>
+					<view class='key'>空间使用费</view>
+					<view class='value'>￥{{info.rent}}</view>
+				</view>
+				<border no-pad="{{true}}"></border>
+				<view class='create-time'>
+					费用产生时间：<text>{{info.rent_start_date}}</text> 至 <text>{{info.rent_end_date}}</text>
+				</view>
+			</view>
+		</view>
+
+		<view class='spaceFee' wx:if="{{info.meeting > 0 || info.teahouse > 0 || info.print_fee > 0}}">
+			<view class='cell-title flex align-c'>
+				<text class='text'>增值费</text>
+				<text class="status {{info.is_pay_all_fee ? 'done' : ''}}">{{info.is_pay_all_fee ? '已缴费' : '待缴费'}}</text>
+			</view>
+			<view class='fee-wlist'>
+				<border no-pad="{{true}}"></border>
+				<view class='cell flex align-c justify-b' wx:if="{{info.meeting > 0}}">
+					<view class='key'>会议室费</view>
+					<view class='value'>￥{{info.meeting}}</view>
+				</view>
+				<view class='cell flex align-c justify-b' wx:if="{{info.teahouse > 0}}">
+					<view class='key'>茶室费</view>
+					<view class='value'>￥{{info.teahouse}}</view>
+				</view>
+				<view class='cell flex align-c justify-b' wx:if="{{info.print_fee > 0}}">
+					<view class='key'>打印费</view>
+					<view class='value'>￥{{info.print_fee}}</view>
+				</view>
+				<border no-pad="{{true}}"></border>
+				<view class='create-time'>
+					费用产生时间：<text>{{info.other_fee_start_date}}</text> 至 <text>{{info.other_fee_end_date}}</text>
+				</view>
+			</view>
+		</view>
+
+		<view class='spaceFee' wx:if="{{other_fee_len > 0}}">
+			<view class='cell-title flex align-c'>
+				<text class='text'>其他费用</text>
+				<text class="status {{info.is_pay_all_fee ? 'done' : ''}}">{{info.is_pay_all_fee ? '已缴费' : '待缴费'}}</text>
+			</view>
+			<view class='fee-wlist'>
+				<border no-pad="{{true}}"></border>
+				<view class='cell flex align-c justify-b' wx:for="{{info.other_fee}}" wx:key="{{index}}">
+					<view class='key'>{{index}}</view>
+					<view class='value'>￥{{item}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class='btn-wrapper' wx:if="{{!info.is_pay_all_fee}}">
+		<view class='text' bindtap="confirm">确认账单</view>
+	</view>
+</view>

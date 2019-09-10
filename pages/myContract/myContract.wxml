@@ -1,0 +1,10 @@
+<!--pages/myContract/myContract.wxml-->
+<view class='list-wrapper'>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+        <contract item-info="{{item}}"></contract>
+    </block>
+</view>
+
+<block wx:if="{{noData}}">
+	<noData></noData>
+</block>

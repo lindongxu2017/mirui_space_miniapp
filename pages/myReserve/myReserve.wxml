@@ -1,0 +1,6 @@
+<view class='list-wrapper' wx:for="{{list}}" wx:key="{{index}}">
+	<payItem item="{{item}}"></payItem>
+</view>
+<block wx:if="{{noData}}">
+	<noData></noData>
+</block>

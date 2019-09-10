@@ -1,0 +1,6 @@
+.list-wrapper {
+    padding-bottom: 40rpx;
+}
+.van-hairline--top-bottom:after {
+    border-top: 0!important;
+}

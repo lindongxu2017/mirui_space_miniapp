@@ -1,0 +1,34 @@
+<van-tabs bind:change="onChange" active="{{index}}">
+	<van-tab title="未支付预约">
+		<view class='list-wrapper' wx:for="{{list3}}" wx:key="{{index}}">
+            <payItem item="{{item}}" type="{{type}}" binddel="del" data-index="{{index}}" data-type="{{type}}"></payItem>
+        </view>
+        <block wx:if="{{noData3}}">
+            <noData></noData>
+        </block>
+	</van-tab>
+	<van-tab title="当前预约">
+		<view class='list-wrapper' wx:for="{{list1}}" wx:key="{{index}}">
+            <payItem item="{{item}}" type="{{type}}" binddel="del" data-index="{{index}}" data-type="{{type}}"></payItem>
+        </view>
+        <block wx:if="{{noData1}}">
+            <noData></noData>
+        </block>
+	</van-tab>
+	<van-tab title="历史预约">
+		<view class='list-wrapper' wx:for="{{list2}}" wx:key="{{index}}">
+            <payItem item="{{item}}" type="{{type}}" binddel="del" data-index="{{index}}" data-type="{{type}}"></payItem>
+        </view>
+        <block wx:if="{{noData2}}">
+            <noData></noData>
+        </block>
+	</van-tab>
+	<van-tab title="已过期预约">
+		<view class='list-wrapper' wx:for="{{list4}}" wx:key="{{index}}">
+            <payItem item="{{item}}" type="{{type}}" binddel="del" data-index="{{index}}" data-type="{{type}}"></payItem>
+        </view>
+        <block wx:if="{{noData4}}">
+            <noData></noData>
+        </block>
+	</van-tab>
+</van-tabs>

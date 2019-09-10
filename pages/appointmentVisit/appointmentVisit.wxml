@@ -1,0 +1,25 @@
+<image src="/icon/appointmentVisitBg.png" mode='widthFix' class="background"></image>
+<view class="content">
+	<image class="title" src="/icon/appointmentVisitTitle.png"></image>
+	<view class="input">
+		<view class="title">参观地址</view>
+		<picker class="flex_1 {{building == '请选择地址' ? 'color' : ''}}" mode="selector" range='{{buildings}}' bindchange="buildingChange" range-key="name">{{building}}<image src="/icon/right.png"></image></picker>
+	</view>
+	<view class="input">
+		<view class="title">到访日期</view>
+		<picker class="flex_1 {{date == '请选择日期' ? 'color' : ''}}" mode="date" bindchange="dateChange">{{date}}<image src="/icon/right.png"></image></picker>
+	</view>
+	<view class="input">
+		<view class="title">到访时间</view>
+		<picker class="flex_1 {{time == '请选择时间' ? 'color' : ''}}" mode="time" bindchange="timeChange">{{time}}<image src="/icon/right.png"></image></picker>
+	</view>
+	<view class="input">
+		<view class="title">您的称谓</view>
+		<input class="flex_1 margin_right" placeholder='请填写姓名' bindinput="input" data-name="name"></input>
+	</view>
+	<view class="input">
+		<view class="title">联系电话</view>
+		<input class="flex_1 margin_right" placeholder='请填写电话' bindinput="input" data-name="tel"></input>
+	</view>
+	<view class="btn" bindtap='confirm'>提交预约</view>
+</view>

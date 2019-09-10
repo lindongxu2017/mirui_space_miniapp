@@ -1,0 +1,5 @@
+<view class="head">
+	<view class="title">企业名称</view>
+	<input placeholder='请输入企业名称' bindinput="input" value="{{name}}"></input>
+</view>
+<view class="btn" bindtap="submit">{{btnTxt}}</view>

@@ -1,0 +1,38 @@
+<!--pages/repairApply/repairApply.wxml-->
+<view class='field-info'>
+    <view class='cell'>
+        <view class='key'>维修类型</view>
+        <view class='value'>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeList}}" range-key="name">
+                <view class="picker">
+                    <text>{{selectValText}}</text>
+                    <image src='/icon/arrow-down.png'></image>
+                </view>
+            </picker>
+            
+        </view>
+    </view>
+    <border no-pad="{{true}}"></border>
+    <view class='cell'>
+        <view class='key'>维修描述</view>
+    </view>
+    <textarea bindinput='inputText' value='{{textareaVal}}'></textarea>
+    <view class='cell'>
+        <view class='key'>维修图片</view>
+    </view>
+    <view class='upload-wrapper'>
+        <block wx:for="{{preViewList}}" wx:key="{{index}}">
+            <view>
+                <image class='preview' src='{{item}}' data-index='{{index}}' mode='aspectFill' bindtap='preview'></image>
+                <image class='del' src='/icon/delete.png' data-index='{{index}}' catchtap='del'></image>
+            </view>
+        </block>
+        <view>
+            <image class='preview' src='/icon/upload.png' mode='widthFix' bindtap='uploadImg'></image>
+        </view>
+    </view>
+</view>
+
+<view class='btn'>
+    <view bindtap='confirm'>提交</view>
+</view>

@@ -1,0 +1,33 @@
+<view class='swiper-wrapper'>
+	<swiperAutoHeight list="{{bannerList}}" width="{{690}}" str="img_url" nav="{{true}}" navSplicing="{{true}}" navUrl="/pages/activityDetail/activityDetail" navStr="active_id" circular="{{true}}" indicatorDots="{{true}}"></swiperAutoHeight>
+</view>
+
+<view class='access-list'>
+    <block wx:for="{{accessList}}" wx:key="{{index}}">
+        <view class='access-item'>
+            <navigator url="{{item.path}}" hover-class="none" bindtap="{{index == 0 ? 'route' : ''}}">
+                <view style="position:relative;width:88rpx;height:88rpx;margin:0 auto 10rpx;">
+					<image src="{{item.iconPath}}"></image>
+					<view wx:if="{{index == 7 && unpaidNumber > 0}}" style="position:absolute;top:0;right:0;width:36rpx;height:36rpx;background:red;border-radius:50%;text-align:center;line-height:36rpx;font-size:20rpx;color:white;">{{unpaidNumber}}</view>
+				</view>
+				<view>{{item.name}}</view>
+            </navigator>
+        </view>
+    </block>
+</view>
+
+<view class='ad-wrapper' wx:if="{{bannerList2.length > 0}}">
+	<swiperAutoHeight list="{{bannerList2}}" width="{{690}}" str="img_url" nav="{{true}}" navSplicing="{{true}}" navUrl="/pages/activityDetail/activityDetail" navStr="active_id" circular="{{true}}"></swiperAutoHeight>
+</view>
+
+<van-cell title="社区动态" center value="查看更多" url="/pages/trends/trends" link-type="switchTab" border="{{false}}" size="large">
+    <image class='arrow' src='/icon/arrow-1.png' slot="right-icon"></image>
+</van-cell>
+<border></border>
+
+<view wx:if="{{trendsList.length > 0}}">
+	<view wx:for="{{trendsList}}" wx:key="{{index}}">
+		<trend item-info="{{item}}"></trend>
+		<border wx:if="{{index != trendsList.length - 1}}"></border>
+	</view>
+</view>

@@ -1,0 +1,4 @@
+/* pages/place/place.wxss */
+.list {
+    padding: 0 30rpx;
+}

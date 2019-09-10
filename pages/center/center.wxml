@@ -1,0 +1,33 @@
+<view class='info-wrapper flex align-s'>
+    <image class='avatar' src='{{userInfo.avatar}}' mode='aspectFill'></image>
+    <view class='content flex flex-dir justify-a'>
+        <view class='name'>{{userInfo.username}}</view>
+        <view class='company-name'>{{userInfo.company_name ? userInfo.company_name : '您还没有企业'}}</view>
+    </view>
+</view>
+
+<view class='num-wrapper'>
+    <image class='bg' src='/icon/center-bg.png' mode='aspectFill'></image>
+    <view class='num-text flex justify-a'>
+        <navigator url="/pages/riceBeans/riceBeans" hover-class='none' class='item'>{{userInfo.mibean_num}}<text class='unit'>米豆</text></navigator>
+        <navigator url="/pages/coupon/coupon" hover-class='none' class='item'>{{userInfo.coupon_num}}<text class='unit'>优惠券</text></navigator>
+        <navigator url="/pages/myAppointment/myAppointment" hover-class='none' class='item'>{{userInfo.subscribe_num}}<text class='unit'>我的预约</text></navigator>
+    </view>
+</view>
+
+<view class='link-wrapper'>
+    <block wx:for="{{link}}" wx:key="{{index}}">
+        <view class="{{item.share?'share-wrapper':''}}">
+            <van-cell title="{{item.title}}" center size="large" border="{{false}}" url="{{item.path}}">
+                <image class='link-icon' slot="icon" src='{{item.icon}}'></image>
+                <van-icon slot="right-icon" name="arrow" color="#9B9B9B" class="van-cell__right-icon"/>
+            </van-cell>
+            <block wx:if="{{item.share}}">
+                <button class='share-btn' open-type='share'></button>
+            </block>
+            <block wx:if="{{index != link.length - 1}}">
+                <border></border>
+            </block>
+        </view>
+    </block>
+</view>

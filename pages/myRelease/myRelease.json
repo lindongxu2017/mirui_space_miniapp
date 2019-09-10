@@ -1,0 +1,8 @@
+{
+	"navigationBarTitleText": "我的发布",
+    "usingComponents": {
+        "trend": "/template/trendItem/trendItem",
+        "border": "/template/border/border",
+        "noData": "/template/noData/noData"
+    }
+}

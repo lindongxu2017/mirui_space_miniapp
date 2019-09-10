@@ -1,0 +1,13 @@
+<!--pages/place/place.wxml-->
+<view class='list'>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+        <place-item item-info="{{item}}" title="{{nextTitle}}"></place-item>
+        <block wx:if="{{index != list.length - 1}}">
+            <border no-pad="{{true}}"></border>
+        </block>
+    </block>
+</view>
+
+<block wx:if="{{noData}}">
+	<noData></noData>
+</block>

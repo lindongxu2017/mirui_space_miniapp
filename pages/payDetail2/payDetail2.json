@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "缴费详情",
+	"usingComponents": {
+		"border": "/template/border/border"
+	}
+}

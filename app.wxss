@@ -1,0 +1,33 @@
+.flex {
+    display: flex;
+    display: -webkit-flex;
+}
+.align-c {
+    align-items: center;
+    -webkit-align-items: center;
+}
+.align-s {
+    align-items: stretch;
+    -webkit-align-items: stretch;
+}
+.justify-a {
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+}
+.justify-b {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.flex-dir {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+.fontSize0{
+	font-size: 0;
+}
+
+.picker {
+    font-size: 0!important;
+}

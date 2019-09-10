@@ -1,0 +1,31 @@
+.list{
+	display:flex;
+	flex-wrap:wrap;
+	padding:15rpx;
+}
+.list .item{
+	width:50%;
+	height:calc(50vw - 15rpx);
+	padding:15rpx;
+	box-sizing:border-box;
+	margin-bottom:80rpx;
+	position:relative;
+}
+.list .item image{
+	height:100%;
+	width:100%;
+	border-radius:10rpx;
+}
+.list .item .txt{
+	position:absolute;
+	bottom:-45rpx;
+	left:15rpx;
+	right:15rpx;
+	height:30rpx;
+	line-height:30rpx;
+	text-align:center;
+	font-size:30rpx;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}

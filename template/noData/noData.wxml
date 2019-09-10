@@ -1,0 +1,5 @@
+<!--template/noDate/noData.wxml-->
+<view class='img-wrapper'>
+    <image src='/icon/noData.png' mode='widthFix'></image>
+	<view>暂无数据</view>
+</view>

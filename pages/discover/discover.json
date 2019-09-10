@@ -1,0 +1,8 @@
+{
+	"navigationBarTitleText": "发现",
+  "usingComponents": {
+      "border": "/template/border/border",
+	  "swiperAutoHeight": "/template/swiperAutoHeight/swiperAutoHeight",
+      "van-cell": "/dist/cell/index"
+  }
+}

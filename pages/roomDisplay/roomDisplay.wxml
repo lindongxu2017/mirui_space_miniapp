@@ -1,0 +1,7 @@
+<view class="list">
+	<navigator class="item" wx:for="{{roomList}}" wx:key="{{index}}" hover-class='none' url="/pages/album/album?id={{item.album_type_id}}&title={{item.name}}&pid={{id}}&ptitle={{title}}">
+		<image lazy-load mode='aspectFill' src="{{item.img_url}}"></image>
+		<view class="txt">{{item.name}}</view>
+	</navigator>
+</view>
+<back wx:if="{{is_share}}"></back>

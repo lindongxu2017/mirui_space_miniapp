@@ -1,0 +1,9 @@
+<!--pages/serviceList/serviceList.wxml-->
+<view class='service-list'>
+    <block wx:for="{{serviceList}}" wx:key="{{index}}">
+        <service item-info="{{item}}"></service>
+        <block wx:if="{{index != serviceList.length - 1}}">
+            <border></border>
+        </block>
+    </block>
+</view>

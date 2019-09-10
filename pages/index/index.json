@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "trend": "/template/trendItem/trendItem",
+        "border": "/template/border/border",
+		"swiperAutoHeight": "/template/swiperAutoHeight/swiperAutoHeight",
+        "van-cell": "/dist/cell/index"
+    }
+}

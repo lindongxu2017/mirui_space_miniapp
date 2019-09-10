@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "米瑞项目照片展示",
+	"usingComponents": {
+		"back": "/template/back/back"
+	}
+}

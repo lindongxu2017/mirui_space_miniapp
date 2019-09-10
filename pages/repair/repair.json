@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "设备报修",
+	"usingComponents": {
+		"repair": "/template/repair/repair",
+		"noData": "/template/noData/noData"
+	}
+}

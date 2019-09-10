@@ -1,0 +1,242 @@
+/* pages/placeAppointment/placeAppointment.wxss */
+@import '/app.wxss';
+.place-wrapper {
+    padding: 30rpx 30rpx 0;
+}
+
+view {
+    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    font-size: 0;
+}
+
+.item-info {
+    flex: 1;
+    -webkit-flex: 1;
+    width: 0;
+    padding-left: 30rpx;
+}
+.item-wrapper {
+    padding: 35rpx 0;
+}
+.avatar {
+    width: 165rpx;
+    height: 165rpx;
+    position: relative;
+}
+
+.avatar image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5rpx;
+}
+
+.name {
+    font-size: 34rpx;
+    color: #122236;
+    font-weight: bold;
+}
+
+.label-list > view {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 43rpx;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+    color: #1685F7;
+    background-color: #F3F9FF;
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+}
+
+.place {
+    align-items: flex-start;
+}
+
+.place image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+    margin-top: 6rpx;
+}
+
+.place .location {
+    flex: 1;
+    -webkit-flex: 1;
+    width: 0;
+    font-size: 26rpx;
+    color: #A3A6AD;
+}
+
+.border-img {
+    width: 100%;
+    height: 24rpx;
+    margin-bottom: 20rpx;
+}
+
+.van-cell {
+    padding-left: 0!important;
+    padding-right: 0!important;
+    text-indent: 0!important;
+}
+.van-cell__title.van-cell__title {
+    font-size: 30rpx;
+    color: #122236;
+}
+.van-field__input {
+    font-size: 30rpx;
+}
+.van-field__input {
+    text-align: right!important;
+}
+
+.btn {
+    position: fixed;
+    width: 100%;
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #DCDCDC;
+}
+.btn view {
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background-color: #1685F7;
+    border-radius: 4rpx;
+    text-align: center;
+}
+.picker .label {
+    font-size: 30rpx;
+    color: #122236;
+}
+.picker .control {
+    font-size: 30rpx;
+}
+.control image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 10rpx;
+}
+.control image, .control text {
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+}
+.placegolder {
+    color: #9FA4B1;
+}
+.timeSelectContent{
+	padding-bottom:22rpx;
+}
+
+
+.timeSelect .timeItem{
+	color:#122236;
+	display:inline-block;
+	width:16.666666666666666666%;
+	height:60rpx;
+	line-height:60rpx;
+    font-size:28rpx;
+	margin-top:22rpx;
+	text-align:center;
+	position:relative;
+}
+.timeSelect .timeItem.active{
+	color:#1685F7;
+}
+.timeSelect .timeItem.active text::before{
+	content:"";
+	position:absolute;
+	bottom:-3px;
+	left:50%;
+	margin-left:-4px;
+	width:8px;
+	height:8px;
+	border-radius:4px;
+	background-color:#1685F7;
+}
+.timeSelect .timeItem text::after{
+	content:"";
+	position:absolute;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto 0;
+	height:25rpx;
+	width:1px;
+	background-color:black;
+}
+.timeSelect .timeItem:nth-child(6n) text::after,
+.timeSelect .timeItem:last-child text::after{
+	display:none;
+}
+.timeSelect .timeItem.left::before,
+.timeSelect .timeItem.right::after{
+	content:"";
+	position:absolute;
+	bottom:0;
+	width:50%;
+	height:2px;
+	background-color:#1685F7;
+}
+.timeSelect .timeItem::before{
+	left:0;
+}
+.timeSelect .timeItem::after{
+	right:0;
+}
+.timeSelect .timeItem.leftUsed.left::before{
+	background-color:#ccc;
+}
+.timeSelect .timeItem.rightUsed.right::after{
+	background-color:#ccc;
+}
+
+
+.timeSelectBtn{
+    line-height:80rpx;
+    color:#fff;
+    background-color:#1685F7;
+    border-radius:6rpx;
+    font-size:32rpx;
+    text-align:center;
+	margin:22rpx 30rpx 0;
+}
+.timeSelectBox .van-popup--safe{
+	padding-bottom:0;
+	z-index:101 !important;
+}
+.mask{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:calc(44px + 606rpx);
+	background-color:rgba(0, 0, 0, .7);
+	z-index:100;
+}
+.mask.mask2{
+	bottom:130px;
+}
+.van-action-sheet__header{
+	background-color:#fafafa;
+}
+.scroll_box{
+	padding:20rpx 0 52rpx;
+	border-bottom:1rpx solid #eee;
+}
+scroll-view{
+	height:410rpx;
+}
+.van-button--small {
+	height:24px !important;
+	min-width:40px !important;
+	line-height:22px !important;
+}
+
+
+.van-action-sheet__cancel,.van-action-sheet__item:last-child{
+	margin-bottom:30px;
+}

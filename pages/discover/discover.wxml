@@ -1,0 +1,63 @@
+<!--pages/discover/discover.wxml-->
+<view class='company-wrapper'>
+    <view class='company flex align-s'>
+        <view class='info-left'>
+            <view class='info-title'>{{company.title}}</view>
+            <view class='info-content'>{{company.content}}</view>
+        </view>
+        <navigator class='info-right' hover-class='none' url="/pages/enterpriseDisplay/enterpriseDisplay">
+			<!-- bindtap='preview' -->
+            <view class='img-wrapper'>
+                <image src='{{company.img_arr[0] || "/icon/demo.jpg" }}' mode='aspectFill'></image>
+            </view>
+			<!-- {{company.img_arr.length}}图 -->
+            <view class='img-num'>更多</view>
+        </navigator>
+    </view>
+</view>
+
+<view class='ad-wrapper' wx:if="{{bannerList.length > 0}}">
+    <swiperAutoHeight list="{{bannerList}}" width="{{690}}" str="img_url" nav="{{true}}" navSplicing="{{true}}" navUrl="/pages/activityDetail/activityDetail" navStr="active_id" circular="{{true}}"></swiperAutoHeight>
+</view>
+
+<view class='border-wrapper'>
+    <image src='/icon/border-img.png' mode='aspectFill'></image>
+</view>
+
+<block wx:if="{{companyList.length > 0}}">
+    <van-cell title="会员公司" center value="查看更多" border="{{false}}" size="large" url="/pages/serviceList/serviceList?title=会员公司&type=1">
+        <image class='arrow' src='/icon/arrow-1.png' slot="right-icon"></image>
+    </van-cell>
+    <border></border>
+
+    <view class='company-list'>
+        <scroll-view scroll-x>
+            <block wx:for="{{companyList}}" wx:key="{{index}}">
+				<navigator class='company-item' hover-class='none' url="/pages/serviceDetail/serviceDetail?id={{item.company_list_id}}&type=1">
+					<image src='{{item.picture}}'></image>
+					<view>{{item.name}}</view>
+				</navigator>
+            </block>
+        </scroll-view>
+    </view>
+
+    <view class='border-wrapper'>
+        <image src='/icon/border-img.png' mode='aspectFill'></image>
+    </view>
+</block>
+
+<van-cell title="米瑞服务商" center value="查看更多" border="{{false}}" size="large" url="/pages/serviceList/serviceList?title=米瑞服务商&type=2">
+    <image class='arrow' src='/icon/arrow-1.png' slot="right-icon"></image>
+</van-cell>
+<border></border>
+
+<view class='service-list'>
+    <block wx:for="{{serviceList}}" wx:key="{{index}}">
+        <navigator hover-class='none' url="/pages/serviceDetail/serviceDetail?id={{item.business_id}}&type=2">
+            <view class='service-item'>
+                <image src='{{item.picture}}'></image>
+                <view>{{item.name}}</view>
+            </view>
+        </navigator>
+    </block>
+</view>

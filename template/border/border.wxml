@@ -1,0 +1,4 @@
+<!--template/border/border.wxml-->
+<view class='border-wrapper' style='padding: 0 {{!noPad ? 30 : 0}}rpx'>
+    <view class='border-content' style='background-color: {{borderColor}};'></view>
+</view>

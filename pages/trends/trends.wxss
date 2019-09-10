@@ -1,0 +1,17 @@
+/* pages/trends/trends.wxss */
+.list-wrapper {
+    padding-bottom: 130rpx
+}
+.release {
+    position: fixed;
+    line-height: 80rpx;
+    width: 240rpx;
+    background-color: #1685F7;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    left: 50%;
+    margin-left: -120rpx;
+    bottom: 50rpx;
+    border-radius: 80rpx;
+}

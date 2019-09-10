@@ -1,0 +1,14 @@
+<navigator url='/pages/serviceDetail/serviceDetail?id={{info.business_id || info.company_list_id}}' hover-class='none'>
+    <view class='item-wrapper flex align-s'>
+        <view class='avatar'>
+            <image src='{{info.picture}}' mode='aspectFill'></image>
+        </view>
+        <view class='item-info'>
+            <view class='name'>{{info.name}}</view>
+            <view class='place flex align-c'>
+                <image src='/icon/location.png' mode='aspectFill'></image>
+                <view class='location'>{{info.address}}</view>
+            </view>
+        </view>
+    </view>
+</navigator>

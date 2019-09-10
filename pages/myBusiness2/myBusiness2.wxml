@@ -1,0 +1,12 @@
+<view wx:if="{{company_name}}">
+	<view class="head">
+		<view class="title">{{company_name}}</view>
+		<image src="/icon/select.png"></image>
+	</view>
+	<view class="btn" bindtap="quit">退出企业</view>
+</view>
+<view wx:else class="empty">
+	<image src="/icon/toast{{type}}.png" mode='widthFix'></image>
+	<view>{{txt}}</view>
+	<navigator wx:if="{{type != 2}}" hover-class='none' url="/pages/businessSearch/businessSearch">查找企业</navigator>
+</view>

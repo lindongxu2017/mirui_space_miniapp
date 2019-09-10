@@ -1,0 +1,10 @@
+{
+	"navigationBarTitleText": "我的缴费",
+	"usingComponents": {
+		"border": "/template/border/border",
+		"payItem": "/template/payItem/payItem",
+		"van-tab": "/dist/tab/index",
+		"van-tabs": "/dist/tabs/index",
+		"noData": "/template/noData/noData"
+	}
+}

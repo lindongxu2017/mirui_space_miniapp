@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "我的合同",
+  "usingComponents": {
+      "contract": "/template/contractItem/contractItem",
+      "noData": "/template/noData/noData"
+  }
+}

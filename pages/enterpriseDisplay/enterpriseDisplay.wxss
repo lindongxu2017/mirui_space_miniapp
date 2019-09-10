@@ -1,0 +1,19 @@
+page{
+	padding:30rpx 0;
+}
+navigator{
+	margin:0 60rpx 60rpx;
+}
+navigator:last-child{
+	margin-bottom:0;
+}
+image{
+	border-radius:10rpx;
+	width:100%;
+	display:block;
+}
+view{
+	text-align:center;
+	font-size:30rpx;
+	margin-top:20rpx;
+}

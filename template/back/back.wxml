@@ -1,0 +1,4 @@
+<view class="backFixed">
+	<view wx:if="{{route != 'pages/enterpriseDisplay/enterpriseDisplay' && route != 'pages/activityDetail/activityDetail'}}" class="backBtn" bindtap="back">返回上级</view>
+	<view class="backBtn" bindtap="toIndex">返回首页</view>
+</view>

@@ -1,0 +1,5 @@
+/* template/border/border.wxss */
+.border-wrapper .border-content {
+    height: 2rpx;
+    transform: rotateX(60deg);
+}

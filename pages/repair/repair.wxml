@@ -1,0 +1,14 @@
+<!--pages/repair/repair.wxml-->
+<block wx:for="{{repairList}}" wx:key="{{index}}">
+    <repair item-info="{{item}}"></repair>
+</block>
+
+<block wx:if="{{repairList.length == 0}}">
+	<noData></noData>
+</block>
+
+<view class='btn'>
+    <navigator url="/pages/repairApply/repairApply" hover-class='none'>
+        <view>申请报修</view>
+    </navigator>
+</view>

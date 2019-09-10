@@ -1,0 +1,58 @@
+.riceBeans_bg{
+	position:relative;
+}
+.riceBeans_bg image{
+	width:100%;
+	display:block;
+}
+.riceBeans_bg .total{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	color:white;
+	text-align:center;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	line-height:1;
+}
+.total_title{
+	font-size:30rpx;
+	margin-bottom:30rpx;
+}
+.total_number{
+	font-size:69rpx;
+	font-weight:600;
+}
+.riceBeans_list{
+	padding:0 30rpx;
+}
+.riceBeans_list .riceBeans_item{
+	padding:40rpx 0;
+	border-bottom:1rpx solid #eee;
+	line-height:1;
+	color:#122236;
+}
+.riceBeans_title{
+	font-size:30rpx;
+	font-weight:600;
+}
+.riceBeans_margin_bottom{
+	margin-bottom:20rpx;
+}
+.riceBeans_type{
+	font-size:28rpx;
+}
+.riceBeans_time{
+	color:#9FA4B1;
+	font-size:26rpx;
+}
+.riceBeans_nub{
+	font-size:30rpx;
+	font-weight:600;
+}
+.riceBeans_nub.add{
+	color:#BD253E;
+}

@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "我的企业",
+	"usingComponents": {
+		"van-swipe-cell": "/dist/swipe-cell2/index"
+	}
+}

@@ -1,0 +1,56 @@
+/* template/contractItem/contractItem.wxss */
+@import "/app.wxss";
+.info-wrapper {
+    padding: 40rpx 30rpx;
+}
+.userinfo {
+    margin-bottom: 30rpx;
+}
+.userinfo .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.userinfo .content {
+    padding-left: 30rpx;
+    flex: 1;
+    -webkit-flex: 1;
+}
+.title {
+    font-size: 30rpx;
+    color: #122236;
+    font-weight: bold;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.status{
+	color:#BD253E;
+	font-size:28rpx;
+}
+.lease, .phone {
+    font-size: 26rpx;
+    color: #9FA4B1;
+}
+.contract-info {
+    padding: 24rpx 24rpx 14rpx;
+    border: 2rpx dashed #C7CCD9;
+    background-color: #FAFAFA;
+    border-radius: 5rpx;
+}
+.cell {
+    font-size: 26rpx;
+    color: #9FA4B1;
+    margin-bottom: 10rpx;
+}
+.cell .red {
+    color: #BD253E;
+}
+.border-img {
+    padding: 0 30rpx;
+    font-size: 0;
+}
+.border-img .img {
+    width: 100%;
+    height: 24rpx;
+}

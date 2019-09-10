@@ -1,0 +1,19 @@
+.backFixed{
+	bottom:100rpx;
+	right:20rpx;
+	position:fixed;
+	z-index:100;
+}
+.backBtn{
+	padding:12rpx;
+	width:68rpx;
+	height:68rpx;
+	border:1px solid red;
+	color:red;
+	border-radius:50%;
+	font-size:28rpx;
+	line-height:34rpx;
+	text-align:center;
+	margin-top:30rpx;
+	box-sizing:content-box;
+}

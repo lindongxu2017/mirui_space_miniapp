@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "场地预约",
+	"usingComponents": {
+		"van-field": "/dist/field/index",
+		"van-button": "/dist/button/index",
+		"border": "/template/border/border",
+		"van-action-sheet": "/dist/action-sheet/index"
+	}
+}

@@ -1,0 +1,39 @@
+<!--template/payItem/payItem.wxml-->
+<view class='info-wrapper'>
+    <view class='order-number flex align-c justify-b'>
+        <view class='text'>订单编号：{{info.out_trade_no}}</view>
+        <view class='text status'>{{info.pay_state == 1 ? '未支付' : '已支付'}}</view>
+    </view>
+    <view class='pay-info flex align-s'>
+        <image class='avatar' src='{{info.img_url}}'></image>
+        <view class='content flex flex-dir justify-a'>
+            <view class='name'>{{info.name}}{{info.number}}</view>
+            <view class='time'>{{info.create_time}}</view>
+            <view class='total'>合计：<text class='text'>￥{{info.total}}</text> </view>
+        </view>
+    </view>
+    <view class='operation'>
+		<block wx:if="{{info.pay_state == 2}}">
+            <view class='btn {{info.is_receipt == 1 ? "active" : ""}}' bindtap='{{info.is_receipt == 1 ? "apply" : ""}}'>{{info.is_receipt == 1 ? '申请收据' : info.is_receipt == 2 ? '申请中' : info.is_receipt == 3 ? '开票中' : '已开收据'}}</view>
+        </block>
+        <navigator hover-class='none' url='/pages/payDetail{{info.bill_type == 2 ? "2" : ""}}/payDetail{{info.bill_type == 2 ? "2" : ""}}?id={{info.bill_id}}'>
+            <view class='btn active'>查看详情</view>
+        </navigator>
+        <block wx:if="{{info.pay_state == 1}}">
+            <view class='btn active' bindtap='toPay'>立即支付</view>
+        </block>
+    </view>
+</view>
+<view class='border-img'>
+    <image class='img' src='/icon/border-img.png' mode='aspectFill'></image>
+</view>
+
+<view class="look_box" hidden='{{!look}}' bindtap="close" catchtouchmove>
+	<view class="look_content" catchtap>
+		<image src="/icon/close.png" class="close" bindtap="close"></image>
+		<view class="title">收据</view>
+		<scroll-view scroll-y>
+			<image mode='widthFix' src="{{shouju}}"></image>
+		</scroll-view>
+	</view>
+</view>

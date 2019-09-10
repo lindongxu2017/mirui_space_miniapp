@@ -1,0 +1,50 @@
+.pd_head{
+	padding:0 30rpx;
+	height:65rpx;
+	line-height:65rpx;
+	background-color:#F8F8F8;
+	color:#9FA4B1;
+	font-size:25rpx;
+}
+.pd_head text{
+	color:#122236;
+	margin:0 6rpx;
+}
+.staff_list{
+	padding:0 30rpx;
+}
+.staff_item{
+	padding:30rpx 0;
+	border-bottom:1rpx solid #e5e5e5;
+	display:flex;
+	align-items:center;
+}
+.staff_img{
+	width:110rpx;
+	height:110rpx;
+	border-radius:5rpx;
+}
+.staff_content{
+	flex:1;
+	width:0;
+	line-height:1;
+	margin-left:30rpx;
+}
+.staff_name{
+	color:#122236;
+	font-weight:600;
+	font-size:33rpx;
+	margin-bottom:15rpx;
+}
+.staff_tel{
+	font-size:30rpx;
+	color:#9FA4B1;
+}
+.staff_btn{
+	color:#BD253E;
+	font-size:25rpx;
+	margin-left:30rpx;
+}
+.staff_btn.black{
+	color:#122236;
+}

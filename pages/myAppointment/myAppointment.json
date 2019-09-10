@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "我的预约",
+	"usingComponents": {
+		"payItem": "/template/payItem2/payItem",
+		"van-tab": "/dist/tab/index",
+		"van-tabs": "/dist/tabs/index",
+        "noData": "/template/noData/noData"
+	}
+}

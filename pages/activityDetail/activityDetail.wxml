@@ -1,0 +1,25 @@
+<import src="/wxParse/wxParse.wxml"/>
+
+<image class='banner-img' src='{{info.img_url}}' mode='widthFix'></image>
+<view class='info'>
+    <view class='item-info flex flex-dir justify-a'>
+        <view class='flex align-c justify-b'>
+            <view class='name'>{{info.title}}</view>
+        </view>
+        <view class='label-list'>
+            <!-- <view>{{info.start_time}} 至 {{info.end_time}}</view> -->
+        </view>
+        <view class='place flex align-s'>
+            <image src='/icon/location.png' mode='aspectFill'></image>
+            <view class='location'>{{info.address}}</view>
+        </view>
+    </view>
+</view>
+
+<view class='cell'>图文介绍</view>
+
+<view class='content'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+
+<back wx:if="{{is_share}}"></back>

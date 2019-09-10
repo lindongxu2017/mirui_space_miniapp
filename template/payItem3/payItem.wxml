@@ -1,0 +1,19 @@
+<view class='info-wrapper'>
+    <view class='order-number flex align-c justify-b'>
+        <view class='text'>预约时间：{{item.create_time}}</view>
+    </view>
+    <view class='pay-info flex align-s'>
+        <view class='avatar'>
+			<image src='{{item.img_url}}' mode='aspectFill'></image>
+			<view class="avatar_btn {{item.type == 3 ? 'bg' : ''}}">{{item.type == 3 ? '参观' : '场地'}}</view>
+		</view>
+        <view class='content flex flex-dir justify-a'>
+            <view class='name'>{{item.number}}</view>
+            <view class="tel">联系电话：{{item.tel}}</view>
+			<view class="address"><image src="/icon/location.png"></image>{{item.address}}</view>
+		</view>
+    </view>
+</view>
+<view class='border-img'>
+    <image class='img' src='/icon/border-img.png' mode='aspectFill'></image>
+</view>

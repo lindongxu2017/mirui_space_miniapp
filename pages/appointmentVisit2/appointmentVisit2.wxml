@@ -1,0 +1,27 @@
+<view class="page">
+	<image class="bg" src="/icon/yuyueBg.png" mode='aspectFill'></image>
+	<view class="content">
+		<view class="leftIcon icon"></view>
+		<view class="rightIcon icon"></view>
+		<view class="head">您已预约<text class="color">{{building}}</text>进行参观</view>
+		<view class="center">
+			<view class="sec">
+				<view class="left">
+					<view class="title">到访时间</view>
+					<view class="txt">{{time}}</view>
+				</view>
+			</view>
+			<view class="sec">
+				<view class="left">
+					<view class="title">姓名</view>
+					<view class="txt">{{name}}</view>
+				</view>
+				<view class="right">
+					<view class="title">联系电话</view>
+					<view class="txt">{{tel}}</view>
+				</view>
+			</view>
+			<view class="btn" bindtap='confirm'>取消预约</view>
+		</view>
+	</view>
+</view>

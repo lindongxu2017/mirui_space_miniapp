@@ -1,0 +1,7 @@
+<view class='field-info'>
+    <textarea value='{{textareaVal}}' bindinput='textInput' placeholder='请输入意见或建议' placeholder-style='color: #9FA4B1;'></textarea>
+</view>
+
+<view class='btn'>
+    <view bindtap='confirm'>提交</view>
+</view>

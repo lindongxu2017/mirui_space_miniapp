@@ -1,0 +1,17 @@
+<!--template/repair/repair.wxml-->
+<view class='repair' wx:if="{{showItem}}">
+    <view class="content_status">
+		<view class='content'>{{info.describe}}</view>
+		<view class="status">{{info.status == 1 ? '待处理' : info.status == 2 ? '处理中' : '已处理'}}</view>
+	</view>
+    <view class='imgs'>
+        <block wx:for="{{info.img_arr}}" wx:key="{{index}}">
+            <image src='{{item}}' mode='aspectFill' data-index="{{index}}" bindtap='preview'></image>
+        </block>
+    </view>
+    <view class='cell flex justify-b align-c'>
+        <view class='date'>{{info.create_time}}</view>
+        <view class='cancle' bindtap='cancelPre' wx:if="{{info.status == 1}}">取消申请</view>
+    </view>
+    <image class='border-img' src='/icon/border-img.png' mode='widthFix'></image>
+</view>

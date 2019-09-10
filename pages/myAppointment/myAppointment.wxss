@@ -1,0 +1,9 @@
+.list-wrapper {
+    padding-bottom: 40rpx;
+}
+.van-hairline--top-bottom:after {
+    border-top: 0!important;
+}
+page .van-tabs__wrap{
+	position:fixed;
+}

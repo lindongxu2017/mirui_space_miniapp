@@ -1,0 +1,32 @@
+<van-tabs active="{{ active }}" bind:change="onChange" sticky="{{true}}">
+    <van-tab title="全部">
+        <view class='list-wrapper'>
+            <block wx:for="{{list1}}" wx:key="{{index}}">
+                <payItem item-info="{{item}}"></payItem>
+            </block>
+        </view>
+        <block wx:if="{{noData1}}">
+            <noData></noData>
+        </block>
+    </van-tab>
+    <van-tab title="待缴费">
+        <view class='list-wrapper'>
+            <block wx:for="{{list2}}" wx:key="{{index}}">
+                <payItem item-info="{{item}}"></payItem>
+            </block>
+        </view>
+        <block wx:if="{{noData2}}">
+            <noData></noData>
+        </block>
+    </van-tab>
+    <van-tab title="已缴费">
+        <view class='list-wrapper'>
+            <block wx:for="{{list3}}" wx:key="{{index}}">
+                <payItem item-info="{{item}}"></payItem>
+            </block>
+        </view>
+        <block wx:if="{{noData3}}">
+            <noData></noData>
+        </block>
+    </van-tab>
+</van-tabs>

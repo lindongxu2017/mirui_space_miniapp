@@ -1,0 +1,10 @@
+<view class="list">
+	<navigator url="/pages/activityDetail/activityDetail?id={{item.active_id}}" hover-class='none' class="item" wx:for="{{list}}" wx:key="{{index}}">
+		<image src="{{item.img_url}}" mode='aspectFill'></image>
+		<view class="content">
+			<view class="title">{{item.title}}</view>
+			<!-- <view class="time">{{item.start_time}} 至 {{item.end_time}}</view> -->
+			<view class="address"><image src="/icon/location.png"></image>{{item.address}}</view>
+		</view>
+	</navigator>
+</view>

@@ -1,0 +1,92 @@
+<!--pages/pay/pay.wxml-->
+<view class='info-wrapper'>
+    <view class='item-wrapper flex align-s'>
+        <view class='avatar'>
+            <image class='img' src='{{info.img_url || billInfo.img_url}}'></image>
+        </view>
+        <view class='item-info flex flex-dir justify-a'>
+            <view class='flex align-c justify-b'>
+                <view class='name'>{{info.name || billInfo.name}}</view>
+            </view>
+            <view class='place flex'>
+                <image class='img' src='/icon/location.png' mode='widthFill'></image>
+                <view class='location'>{{info.address || billInfo.address}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<border></border>
+<view class='coupon' wx:if="{{room_id == ''}}">
+    <view class='cell'>
+        <view class='key'>优惠券</view>
+        <view class='value'>
+            <block wx:if="{{typeList.length == 0}}">
+                <text>无可用</text>
+            </block>
+            <block wx:else>
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeList}}" range-key="coupon_str">
+                    <view class="picker">
+                        <text>{{selectValText}}</text>
+                        <image src='/icon/arrow-1.png'></image>
+                    </view>
+                </picker>
+            </block>
+        </view>
+    </view>
+    <image class='border-img' mode='aspectFill' src='/icon/border-img.png'></image>
+</view>
+
+<view class='pay-way'>
+    <view class='title' style="padding-bottom:{{billInfo ? '10rpx' : '35rpx'}};">支付方式</view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+        <van-cell-group border="{{false}}">
+			<block wx:if="{{room_id || (billInfo && billInfo.pay_type == 1)}}">
+				<van-cell checked-color="#BD253E" center border="{{false}}" title="微信支付" clickable data-name="2" bind:click="onClick">
+					<van-radio checked-color="#BD253E" name="2" />
+					<image class='left-icon' src='/icon/wechat.png' slot="icon"></image>
+				</van-cell>
+            </block>
+			<border no-pad="{{true}}"></border>
+            <block wx:if="{{room_id}}">
+                <van-cell checked-color="#BD253E" center border="{{false}}" title="米豆支付" clickable data-name="1" bind:click="onClick">
+                    <van-radio checked-color="#BD253E" name="1" />
+                    <image class='left-icon' src='/icon/midou.png' slot="icon"></image>
+                </van-cell>
+                <border no-pad="{{true}}"></border>
+            </block>
+            <block wx:if="{{billInfo && billInfo.pay_type == 2}}">
+                <van-cell center border="{{false}}" title="对公转账" clickable data-name="3" bind:click="onClick">
+                    <van-radio checked-color="#BD253E" name="3" />
+                    <image class='left-icon' src='/icon/public.png' slot="icon"></image>
+                </van-cell>
+            </block>
+        </van-cell-group>
+    </van-radio-group>
+</view>
+
+<view class='public-wraper' wx:if="{{radio == 3}}">
+    <view class='content'>
+        <!-- <view wx:for="{{companyArr}}" wx:key="{{index}}" style="margin-bottom:30rpx;"> -->
+			<view class='company'>{{billInfo.account_data.company_name}}</view>
+        	<view class='text'>开户行：{{billInfo.account_data.open_bank}}</view>
+        	<view class='text'>对公账户：{{billInfo.account_data.account}}</view>
+        <!-- </view> -->
+		<view style="color:red;font-size:28rpx;">（请用与我司签约合同的对公转账，转入以上账户，并上传转账凭证）</view>
+		<view class='upload-wrapper'>
+            <block wx:for="{{preViewList}}" wx:key="{{index}}">
+                <view>
+                    <image class='preview' src='{{item}}' data-index='{{index}}' mode='aspectFill' bindtap='preview'></image>
+                    <image class='del' src='/icon/delete.png' data-index='{{index}}' catchtap='del'></image>
+                </view>
+            </block>
+            <view>
+                <image class='preview' src='/icon/upload.png' mode='widthFix' bindtap='uploadImg'></image>
+            </view>
+        </view>
+        <!-- <view class='tips'>对公转账请上传转账记录后（30分钟后）查看余额</view> -->
+    </view>
+</view>
+
+<view class='btn-wrapper'>
+    <view class='btn' bindtap='{{disable ? "" : "confirm"}}'>确认</view>
+</view>

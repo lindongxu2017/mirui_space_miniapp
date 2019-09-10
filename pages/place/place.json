@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"place-item": "/template/placeItem/placeItem",
+		"border": "/template/border/border",
+		"noData": "/template/noData/noData"
+	}
+}

@@ -1,0 +1,18 @@
+<view class="list">
+	<block wx:for="{{complaintList}}" wx:key="{{index}}">
+		<view class="item">
+			<view class="time">{{item.create_time}}</view>
+			<view class="content">{{item.content}}</view>
+		</view>
+	</block>
+</view>
+
+<block wx:if="{{complaintList.length == 0}}">
+	<noData></noData>
+</block>
+
+<view class='btn'>
+    <navigator url="/pages/suggestion/suggestion" hover-class='none'>
+        <view>反馈建议</view>
+    </navigator>
+</view>

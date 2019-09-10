@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "米豆明细",
+    "usingComponents": {
+        "noData": "/template/noData/noData"
+    }
+}

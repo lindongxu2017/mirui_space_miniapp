@@ -1,0 +1,13 @@
+<view class="van-swipe-cell" bindtouchstart="startDrag"  catchtouchmove="onDrag" catchtouchend="endDrag" catchtouchcancel="endDrag">
+	<view style="{{ wrapperStyle }}" bindtransitionend="onTransitionend">
+    	<view class="van-swipe-cell__content" data-key="cell" catchtap="onClick">
+			<slot name="content"></slot>
+		</view>
+		<view class="van-swipe-cell__left" data-key="left" catchtap="onClick">
+			<slot name="left"></slot>
+		</view>
+		<view class="van-swipe-cell__right" data-key="right" catchtap="onClick">
+			<slot name="right"></slot>
+		</view>
+	</view>
+</view>

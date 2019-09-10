@@ -1,0 +1,54 @@
+page{
+	padding-top:85rpx;
+}
+.search_box{
+	padding:10rpx 30rpx;
+	position:fixed;
+	top:0;
+	left:0;
+	width:calc(100% - 60rpx);
+}
+.search_box .search{
+	height:65rpx;
+	background:rgba(244,244,244,1);
+	border-radius:5rpx;
+	line-height:65rpx;
+	display:flex;
+	align-items:center;
+	padding:0 30rpx;
+}
+.search_box .search image{
+	width:30rpx;
+	height:30rpx;
+	margin-right:20rpx;
+}
+.search_box .search input{
+	flex:1;
+	width:0;
+	height:65rpx;
+	font-size:30rpx;
+	color:#333;
+}
+.business_list{
+	padding:30rpx 30rpx 1rpx;
+}
+.business_item{
+	margin-bottom:30rpx;
+	background:rgba(249,249,249,1);
+	border:5rpx solid rgba(233,235,237,1);
+	border-radius:5rpx;
+	text-align:center;
+	color:#122236;
+	font-size:35rpx;
+	line-height:1;
+}
+.business_title{
+	padding:34rpx 0;
+	font-weight:600;
+	border-bottom:1rpx dashed #E9EBED;
+}
+.business_btn{
+	padding:25rpx 0;
+	font-size:30rpx;
+	color:#1685F7;
+}

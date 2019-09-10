@@ -1,0 +1,31 @@
+<!-- <van-tabs active="{{ active }}" bind:change="onChange" border="{{false}}">
+    <van-tab title="个人信息">
+        <view class='tab-content person-info-list'>
+            <block wx:for="{{personList}}" wx:key="{{index}}">
+                <message item-info="{{item}}"></message>
+            </block>
+            <block wx:if="{{noData1}}">
+                <noData></noData>
+            </block>
+        </view>
+    </van-tab>
+    <van-tab title="系统消息">
+        <view class='tab-content system-info-list'>
+            <block wx:for="{{systemList}}" wx:key="{{index}}">
+                <message item-info="{{item}}"></message>
+            </block>
+            <block wx:if="{{noData2}}">
+                <noData></noData>
+            </block>
+        </view>
+    </van-tab>
+</van-tabs> -->
+
+<view class='tab-content person-info-list'>
+	<block wx:for="{{personList}}" wx:key="{{index}}">
+		<message item-info="{{item}}"></message>
+	</block>
+	<block wx:if="{{noData1}}">
+		<noData></noData>
+	</block>
+</view>

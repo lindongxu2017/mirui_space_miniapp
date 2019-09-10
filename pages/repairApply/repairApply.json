@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "维修申请",
+	"usingComponents": {
+		"border": "/template/border/border"
+	}
+}

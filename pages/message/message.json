@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "消息",
+    "usingComponents": {
+        "message": "/template/messageItem/messageItem",
+        "van-tab": "/dist/tab/index",
+        "van-tabs": "/dist/tabs/index",
+        "noData": "/template/noData/noData"
+    }
+}

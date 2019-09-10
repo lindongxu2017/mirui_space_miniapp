@@ -1,0 +1,6 @@
+<view class="list">
+	<view class="item" wx:for="{{album}}" wx:key="{{index}}" bindtap='preview' data-index="{{index}}">
+		<image lazy-load mode='aspectFill' src="{{item.img_url}}"></image>
+	</view>
+</view>
+<back wx:if="{{is_share}}" pid="{{pid}}" ptitle="{{ptitle}}"></back>

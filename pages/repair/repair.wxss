@@ -1,0 +1,24 @@
+page {
+    padding-bottom: 160rpx;
+}
+view {
+    font-size: 0;
+    box-sizing: border-box;
+}
+.btn {
+    position: fixed;
+    width: 100%;
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #DCDCDC;
+}
+.btn view {
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background-color: #1685F7;
+    border-radius: 4rpx;
+    text-align: center;
+}

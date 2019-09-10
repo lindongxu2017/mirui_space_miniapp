@@ -1,0 +1,18 @@
+.img-wrapper {
+    padding:100rpx 0 0;
+    box-sizing: border-box;
+    width: 100%;
+	text-align:center;
+	color:#999;
+	font-size:30rpx;
+}
+.img-wrapper image {
+    width: 80%;
+    display: block;
+	margin:0 10%;
+	height:54.4vw;
+}
+.img-wrapper view{
+	margin-top:-10rpx;
+	font-size:30rpx;
+}

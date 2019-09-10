@@ -1,0 +1,19 @@
+<!--pages/trendsRelease/trendsRelease.wxml-->
+<view class='field-wrapper'>
+    <textarea value='{{textareaVal}}' bindinput="bindinput" placeholder='要发布的内容...' placeholder-style='color: #9FA4B1;'></textarea>
+    <view class='upload-wrapper'>
+        <block wx:for="{{preViewList}}" wx:key="{{index}}">
+            <view>
+                <image class='preview' src='{{item}}' data-index='{{index}}' mode='aspectFill' bindtap='preview'></image>
+                <image class='del' src='/icon/delete.png' data-index='{{index}}' catchtap='del'></image>
+            </view>
+        </block>
+        <view>
+            <image class='preview' src='/icon/upload.png' mode='widthFix' bindtap='uploadImg'></image>
+        </view>
+    </view>
+</view>
+
+<view class='btn'>
+    <view bindtap='confirm'>发布</view>
+</view>

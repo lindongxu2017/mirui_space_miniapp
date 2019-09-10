@@ -1,0 +1,58 @@
+page{
+	background-color:#F8F8F8;
+}
+.head{
+	margin:23rpx 0 145rpx;
+	padding:0 30rpx;
+	font-size:30rpx;
+	display:flex;
+	justify-content:space-between;
+	height:100rpx;
+	line-height:100rpx;
+	background-color:white;
+	color:#122236;
+	align-items:center;
+}
+.head .title{
+	margin-right:30rpx;
+	flex:1;
+	width:0;
+}
+.head image{
+	width:43rpx;
+	height:43rpx;
+}
+.btn{
+	margin:0 30rpx 35rpx;
+	height:78rpx;
+	line-height:78rpx;
+	text-align:center;
+	font-size:30rpx;
+	color:#1685F7;
+	font-weight:600;
+	border-radius:4rpx;
+	border:1rpx solid #1685F7;
+}
+.empty{
+	line-height:1;
+	text-align:center;
+	padding-top:200rpx;
+}
+.empty image{
+	width:100%;
+}
+.empty view{
+	color:#999;
+	font-size:28rpx;
+}
+.empty navigator{
+	margin:46rpx auto 0;
+	width:186rpx;
+	height:70rpx;
+	border:1rpx solid rgba(22,133,247,1);
+	border-radius:5rpx;
+	line-height:66rpx;
+	text-align:center;
+	color:#1685F7;
+	font-size:28rpx;
+}

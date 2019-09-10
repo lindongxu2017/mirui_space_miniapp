@@ -1,0 +1,118 @@
+<!--pages/placeAppointment/placeAppointment.wxml-->
+<view class='place-wrapper'>
+    <view class='item-wrapper flex align-s'>
+        <view class='avatar'>
+            <image src='{{info.img_url}}' mode='aspectFill'></image>
+        </view>
+        <view class='item-info flex flex-dir justify-a'>
+            <view class='name'>{{info.name}}{{info.number}}</view>
+            <view class='place flex'>
+                <image src='/icon/location.png' mode='aspectFill'></image>
+                <view class='location'>{{info.address}}</view>
+            </view>
+        </view>
+    </view>
+    <image class='border-img' src='/icon/border-img.png'></image>
+
+
+
+
+
+    <van-cell-group>
+        <van-field value="{{ field.name }}" label="预约人" placeholder="请填写姓名" placeholder-style="color: #9FA4B1" border="{{ false }}" bindinput="inputName" />
+        <border no-pad="{{true}}"></border>
+
+        <!-- <van-field value="{{ field.phone }}" type="number" label="联系电话" placeholder="请填写手机号" placeholder-style="color: #9FA4B1" border="{{ false }}" bindinput="inputPhone" /> -->
+
+		<van-field value="{{ field.phone }}" type="number" center clearable label="联系电话" placeholder="请填写手机号" placeholder-style="color: #9FA4B1" border="{{ false }}" bindinput="inputPhone" use-button-slot>
+    		<van-button slot="button" size="small" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取</van-button>
+  		</van-field>
+
+        <border no-pad="{{true}}"></border>
+
+		<van-field label="预约日期" use-button-slot readonly border="{{ false }}">
+			<picker slot="button" mode="date" start="{{minDate}}" value="{{field.startDate}}" bindchange="bindStartDateChange">
+				<view class="picker flex align-c justify-b">
+					<view class='control'>
+						<text style='color: #333;' wx:if='{{field.startDate}}' class='time'>{{field.startDate}}</text>
+						<text wx:else class='placegolder'>请选择日期</text>
+						<image src='/icon/arrow-1.png'></image>
+					</view>
+				</view>
+			</picker>
+		</van-field>
+		<border no-pad="{{true}}"></border>
+		
+        <van-field wx:if="{{type != 1}}" label="时间段" use-button-slot readonly border="{{ false }}">
+            <!-- <picker slot="button" mode="time" start="{{minTime}}" value="{{field.startTime?field.startTime:minTime}}" bindchange="bindStartTimeChange"> -->
+                <view class="picker flex align-c justify-b" slot="button" bindtap="timeSelect">
+                    <view class='control'>
+                        <text style='color: #333;' wx:if='{{field.timeSlot}}' class='time'>{{field.timeSlot}}</text>
+                        <text wx:else class='placegolder'>请选择时间段</text>
+                        <image src='/icon/arrow-1.png'></image>
+                    </view>
+                </view>
+            <!-- </picker> -->
+        </van-field>
+
+		<van-field wx:else label="时间段" use-button-slot readonly border="{{ false }}">
+			<view class="picker flex align-c justify-b" slot="button" bindtap="timeSelect">
+				<view class='control'>
+					<text style='color: #333;' wx:if='{{field.timeSlot}}' class='time'>{{field.timeSlot}}</text>
+					<text wx:else class='placegolder'>请选择时间段</text>
+					<image src='/icon/arrow-1.png'></image>
+				</view>
+			</view>
+        </van-field>
+
+        <border no-pad="{{true}}"></border>
+		<view wx:if="{{hour > 0}}" style="color:red;font-size:28rpx;text-align:right;margin-top:16rpx;">共计{{hour}}小时，需消耗{{info.mibean * hour * 2}}米豆或{{info.price * hour * 2}}元</view>
+
+        <!-- <block wx:if="{{type == 1}}">
+            <van-field label="结束日期" use-button-slot readonly border="{{ false }}">
+                <picker slot="button" mode="date" start="{{field.startDate?field.startDate:minDate}}" value="{{field.endDate}}" bindchange="bindEndDateChange">
+                    <view class="picker flex align-c justify-b">
+                        <view class='control'>
+                            <text style='color: #333;' wx:if='{{field.endDate}}' class='time'>{{field.endDate}}</text>
+                            <text wx:else class='placegolder'>请选择日期</text>
+                            <image src='/icon/arrow-1.png'></image>
+                        </view>
+                    </view>
+                </picker>
+            </van-field>
+            <border no-pad="{{true}}"></border>
+
+            <van-field label="结束时间" use-button-slot readonly border="{{ false }}">
+                <picker slot="button" mode="time" start="{{field.startTime?field.startTime:minTime}}" value="{{field.endTime?field.endTime:field.startTime?field.startTime:minTime}}" bindchange="bindEndTimeChange">
+                    <view class="picker flex align-c justify-b">
+                        <view class='control'>
+                            <text style='color: #333;' wx:if='{{field.endTime}}' class='time'>{{field.endTime}}</text>
+                            <text wx:else class='placegolder'>请选择时间</text>
+                            <image src='/icon/arrow-1.png'></image>
+                        </view>
+                    </view>
+                </picker>
+            </van-field>
+        </block> -->
+    </van-cell-group>
+</view>
+<view class='btn'>
+    <view bindtap='confirm'>立即预约</view>
+</view>
+
+<view class="mask mask2" hidden='{{!timeSelectShow2}}' bindtap="onClose2"></view>
+<van-action-sheet safe-area-inset-bottom="{{false}}" overlay="{{false}}" show="{{timeSelectShow2}}" actions="{{timeSlots2}}" bind:close="onClose" bind:select="onSelect"></van-action-sheet>
+
+<view class="mask" hidden='{{!timeSelectShow}}' bindtap="onClose"></view>
+<van-action-sheet overlay="{{false}}" show="{{timeSelectShow}}" title="预约时段" bind:close="onClose" class="timeSelectBox">
+	<view class="timeSelectContent">
+		<view class="scroll_box">
+			<scroll-view scroll-y class="timeSelect">
+				<view class="timeItem {{item.active ? 'active' : ''}} {{item.leftNotUsed ? '' : 'leftUsed'}} {{item.rightNotUsed ? '' : 'rightUsed'}} {{item.left || item.selectLeft ? 'left' : ''}} {{item.right || item.selectRight ? 'right' : ''}}" wx:for="{{timeSlots}}" wx:key="{{index}}" bindtap="{{item.is_selected && item.is_checked ? '' : 'selectTime'}}" data-index="{{index}}">
+					<text>{{item.time}}</text>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="timeSelectBtn" bindtap="timeSelectConfirm">确定</view>
+	</view>
+</van-action-sheet>
